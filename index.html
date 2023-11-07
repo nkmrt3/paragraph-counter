@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#000000"/>
+  <title>Word Counter</title>
+  <link href="/paragraph-counter/static/css/main.1df30064.css" rel="stylesheet">
+</head>
+<body>
+  <div id="root">
+    <h1>Word Counter</h1>
+    <textarea id="inputText" rows="10" cols="50" oninput="countWords()"></textarea>
+    <p>Word Count: <span id="wordCount">0</span></p>
+  </div>
+
+  <script>
+    function countWords() {
+      const inputText = document.getElementById('inputText');
+      const wordCount = document.getElementById('wordCount');
+      
+      const words = inputText.value.split(/\s+/).filter(word => word !== ''); // Split by whitespace and remove empty strings
+      wordCount.textContent = words.length;
+    }
+  </script>
+</body>
+</html>
+
